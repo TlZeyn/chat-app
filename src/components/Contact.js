@@ -2,31 +2,12 @@ import React from 'react';
 import './Contact.css'
 
 
-
-// function Contact (props) {
-//     return (
-//         <div className='Contact'>
-//             <img className='avatar' src={props.avatar} alt='random img'/>
-//             <div>
-//                 <h4 className='name'>{props.name}</h4>
-//                 <div className='status'>
-//                     <div className='status-text'>    
-//                         <span className= {props.online ?'status-online':'status-offline'}></span>
-//                         {props.online ?'online':'offline'}
-//                     </div>
-//                 </div>
-
-//             </div>
-//         </div>
-//     )   
-// }
-
 class Contact extends React.Component {
     state = {
-        online : false
+        online : this.props.online
     }
 
-    handleClick = (event) => {
+    onlineClick = (event) => {
         this.setState ({
             online: !this.state.online
         })
@@ -36,11 +17,11 @@ class Contact extends React.Component {
         return (
 
             <div className='Contact'>
-                <img className='avatar' src={this.avatar} alt='random img' />
+                <img className='avatar' src={this.props.avatar} alt='random img' />
                 <div>
-                    <h4 className='name'>{this.name}</h4>
+                    <h4 className='name'>{this.props.name}</h4>
                     <div className='status'>
-                        <div className='status-text' onClick ={this.handleClick}>
+                        <div className='status-text' onClick ={this.onlineClick}>
                             <span className={this.state.online ? 'status-online' : 'status-offline'}></span>
                             {this.state.online? 'online' : 'offline'}
                         </div>
