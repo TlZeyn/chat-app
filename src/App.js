@@ -1,15 +1,10 @@
 import React from 'react';
-import Contact from './components/Contact'
+import ContactList from './components/ContactList';
 
-
-
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <Contact name='Brad Gibson' avatar ='https://randomuser.me/api/portraits/thumb/men/75.jpg' online ={false}/>
-      <Contact name='Marc Hansen' avatar ='https://randomuser.me/api/portraits/men/85.jpg' online ={true}/>
-      <Contact name='Sebastian Garza' avatar ='https://randomuser.me/api/portraits/men/6.jpg' online ={false}/>
-      
+      <ContactList />
     </div>
   );
 }
